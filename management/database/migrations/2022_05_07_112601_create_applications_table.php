@@ -21,7 +21,6 @@ class CreateApplicationsTable extends Migration
             $table->string('notes');
             $table->string('job');
             $table->string('requirements');
-         
             $table->float('salary', 8, 2);
             $table->enum('insurance', ['yes','no'])->default('no');
             $table->enum('transportation', ['yes','no'])->default('no');

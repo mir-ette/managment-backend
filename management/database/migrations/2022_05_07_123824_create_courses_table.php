@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServantsTable extends Migration
+class CreateCoursesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateServantsTable extends Migration
      */
     public function up()
     {
-        Schema::create('servants', function (Blueprint $table) {
+        Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->string('role');
-            $table->string('church_name'); 
-            
+            $table->string('name'); 
+            $table->enum('got_certificate', ['yes','no'])->default('yes');
+            $table->date('date_of_?');
+            $table->string('centrename_of_givencourse'); 
+            //idofemp
+
+
             $table->timestamps();
         });
     }
@@ -29,6 +33,6 @@ class CreateServantsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('servants');
+        Schema::dropIfExists('courses');
     }
 }
