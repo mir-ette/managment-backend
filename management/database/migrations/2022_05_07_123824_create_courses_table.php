@@ -17,10 +17,10 @@ class CreateCoursesTable extends Migration
             $table->id();
             $table->string('name'); 
             $table->enum('got_certificate', ['yes','no'])->default('yes');
-            $table->date('date_of_?');
+            $table->date('date_of_certificate');
             $table->string('centrename_of_givencourse'); 
-            //idofemp
-
+            $table->unsignedBigInteger('employee_id');
+            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
 
             $table->timestamps();
         });

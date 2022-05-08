@@ -31,8 +31,11 @@ class CreateEmployeesTable extends Migration
             $table->bigInteger('passport_number')->unique();
             $table->string('notes'); 
             $table->string('certificates');
-            //  $table->integer('idcourse');
-               //  $table->integer('idexperience');
+            // $table->unsignedBigInteger('co_id');
+            // $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+        
+            // $table->unsignedBigInteger('experience_id');
+            // $table->foreign('experience_id')->references('id')->on('experience')->onDelete('cascade');
             $table->timestamps();
         });
     }

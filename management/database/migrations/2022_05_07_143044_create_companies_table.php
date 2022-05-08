@@ -23,6 +23,8 @@ class CreateCompaniesTable extends Migration
               // $table->string('app id');
             $table->string('where to post');
             $table->enum('commission', ['yes','no'])->default('no');
+            $table->unsignedBigInteger('servant_id');
+            $table->foreign('servant_id')->references('id')->on('servants')->onDelete('cascade');
             $table->timestamps();
         });
     }
