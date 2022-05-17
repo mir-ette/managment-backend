@@ -15,13 +15,19 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); 
+            $table->string('education'); 
+            $table->string('grade'); 
+            $table->date('graduation_year');
+            $table->string('certifications'); 
+            $table->date('date_of_certificate'); 
+            $table->string('name_of_courses'); 
             $table->enum('got_certificate', ['yes','no'])->default('yes');
-            $table->date('date_of_certificate');
             $table->string('centrename_of_givencourse'); 
+            $table->date('start_course'); //?
+            $table->string('skills_aquired'); 
+            $table->string('projects'); 
             $table->unsignedBigInteger('employee_id');
             $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
-
             $table->timestamps();
         });
     }

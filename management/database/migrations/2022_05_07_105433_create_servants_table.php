@@ -15,9 +15,13 @@ class CreateServantsTable extends Migration
     {
         Schema::create('servants', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('national_id');
+            $table->integer('wsp');
+            $table->string('phone_no');
+            $table->string('email');
             $table->string('role');
-            $table->string('church_name'); 
-            
+            $table->string('church_name');  
             $table->timestamps();
         });
     }

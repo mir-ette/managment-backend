@@ -16,26 +16,20 @@ class CreateEmployeesTable extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->string('full_name'); 
+            $table->string('nationality'); 
+            $table->string('email'); 
+            $table->integer('phone-no'); 
+            $table->integer('wsp'); 
             $table->string('church_name'); 
-            $table->string('specialization'); 
-            $table->string('education'); 
             $table->enum('gender', ['male', 'female']);
             $table->enum('marital_status', ['single', 'married']);
-            $table->integer('age');
-            $table->date('graduation_year');
-            $table->date('birth_date');
-            $table->bigInteger('mobile_number');
+             $table->date('birthdate');
+             $table->integer('age')->virtualAs('created_at - birthdate')->nullable();
             $table->string('address'); 
             $table->string('area'); 
             $table->bigInteger('national_id')->unique();
             $table->bigInteger('passport_number')->unique();
             $table->string('notes'); 
-            $table->string('certificates');
-            // $table->unsignedBigInteger('co_id');
-            // $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
-        
-            // $table->unsignedBigInteger('experience_id');
-            // $table->foreign('experience_id')->references('id')->on('experience')->onDelete('cascade');
             $table->timestamps();
         });
     }

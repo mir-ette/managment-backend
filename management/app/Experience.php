@@ -8,11 +8,17 @@ class Experience extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'job',
+        'last_job',
         'company',
         'about_job',
+        'last_salary',
+        'job_hours',
         'from',
         'to',
+        'period',
+        'transportation',
+        'insurance',
+        'commission',
         'employee_id'
     ];
     public function employee() { 

@@ -13,9 +13,11 @@ class Company extends Model
         'name',
         'address',
         'governorate',
-        'way to communicate',
-        'where to post',
-        'commission',
+        'email',
+        'wsp',
+        'phone_no',
+        'post_date',
+        'servant_dealer',
         'servant_id',
     ];
     public function servant() { 

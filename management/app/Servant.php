@@ -11,7 +11,8 @@ class Servant extends Model
     protected $fillable = [
         
         'role',
-        'church_name'
+        'church_name',
+        'name'
     ];
     public function  applications() {
         return $this->hasMany( Application::class);

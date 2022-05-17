@@ -2,6 +2,7 @@
 
 namespace App;
 use App\Servant;
+use App\Company;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -12,17 +13,24 @@ class Application extends Model
         
         'status',
         'no_of_req_emp',
-        'created_at',
+        'create_at',
         'notes',
         'job',
         'requirements',
         'salary',
         'insurance',
         'transportation',
-        'servant_id'
+        'where to post',
+        'commission',
+        'code',
+        'servant_id',
+        'comp_id'
+
     ];
     public function servant() { 
         return $this->belongsTo(Servant::class);
        }
-       
+       public function company() { 
+        return $this->belongsTo(Company::class);
+       }  
 }

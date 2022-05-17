@@ -18,11 +18,11 @@ class CreateCompaniesTable extends Migration
             $table->string('name'); 
             $table->string('address');
             $table->string('governorate');
-            $table->string('way to communicate');
-            // $table->string('5adem id');
-              // $table->string('app id');
-            $table->string('where to post');
-            $table->enum('commission', ['yes','no'])->default('no');
+            $table->string('email');
+            $table->integer('wsp');
+            $table->integer('phone_no');
+            $table->dateTime('post_date', 0);
+            $table->string('servant_dealer');
             $table->unsignedBigInteger('servant_id');
             $table->foreign('servant_id')->references('id')->on('servants')->onDelete('cascade');
             $table->timestamps();

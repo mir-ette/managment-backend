@@ -15,6 +15,7 @@ class CreateDealingsTable extends Migration
     {
         Schema::create('dealings', function (Blueprint $table) {
             $table->id();
+           // $table->string(''); 
             $table->timestamps();
         });
     }
